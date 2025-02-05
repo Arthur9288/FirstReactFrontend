@@ -1,14 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './HomePage.css';
 
 const HomePage = () => {
-    const [isBlue, setIsBlue] = useState(false);
     const [backgroundColor, setBackgroundColor] = useState('#fff');
-
-    const toggleColor = () => {
-        setIsBlue(!isBlue);
-    };
-
+    const [showScrollToTop, setShowScrollToTop] = useState(false);
     const generateRandomGrey = () => {
         // Generate a random number between 0 and 255
         const shade = Math.floor(Math.random() * 256);
@@ -19,15 +14,43 @@ const HomePage = () => {
         setBackgroundColor(generateRandomGrey());
     };
 
+    const handleScroll = () => {
+        if (window.scrollY > 300) {
+            setShowScrollToTop(true);
+        } else {
+            setShowScrollToTop(false);
+        }
+    };
+
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+    
     return (
-        <div className="cafe-homepage" style={{ backgroundColor }}>
-            <h1>Welcome to Webcafe AI</h1>
-            <p>Your go-to solution for AI-driven web applications.</p>
-            <div className={`cafe-color-box ${isBlue ? 'cafe-blue' : 'cafe-red'}`}></div>
-            <button className="cafe-button" onClick={toggleColor}>Change Color</button>
-            <button className="cafe-button" onClick={changeBackground}>
-                Random Grey Background
-            </button>
+        <div className="cafe-homepage" style={{ 
+            '--dynamic-color': backgroundColor,
+            backgroundImage: `linear-gradient(to bottom, #f6f6f4 0%, ${backgroundColor} 20%)`,
+            backgroundColor: 'transparent'
+        }}>
+            <div className="content">
+                <h2>Welcome to our Website</h2>
+                <p>Try changing the background color!</p>
+                <button className="cafe-button" onClick={changeBackground}>
+                    Random Grey Background
+                </button>
+            </div>
+            {showScrollToTop && (
+                <button className="scroll-to-top" onClick={scrollToTop}>
+                    ↑
+                </button>
+            )}
         </div>
     );
 };

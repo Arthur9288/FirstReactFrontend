@@ -1,0 +1,148 @@
+/* Header styles */
+.header {
+  background-color: #f6f6f4;
+  color: black;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  position: sticky;
+  top: 0;
+  background-color: #f6f6f4;
+  z-index: 1000;
+}
+
+.nav-left,
+.nav-right {
+  flex: 1; /* Distribute equal space on the left and right */
+  display: flex;
+  align-items: center;
+}
+
+.nav-left {
+  gap: 10px;
+}
+
+.nav-right {
+  gap: 15px;
+  justify-content: flex-end; /* Align items to the right */
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center; /* Center the links horizontally */
+  flex: 2; /* Allow the nav-links to take up more space for centering */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: #ffcc00;
+  text-decoration: underline;
+}
+
+.logo {
+  width: 40px;
+}
+
+.brand {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.sales {
+  font-size: 14px;
+}
+
+.login, .signup {
+  padding: 8px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.login {
+  background: none;
+  color: black;
+}
+
+.signup {
+  background: #ffcc00;
+  color: black;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Hero section */
+.hero {
+  margin-top: 30px;
+  padding: 40px 20px;
+}
+
+.hero h3 {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.hero h1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.hero p {
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+.hero .signup {
+  font-size: 16px;
+  padding: 12px 20px;
+  border-radius: 5px;
+}
+
+/* Statistics section */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat strong {
+  font-size: 24px;
+  display: block;
+}
+
+.stat span {
+  font-size: 14px;
+  color: #555;
+}
+
+.login:hover {
+  color: #ff9900;
+}
+
+.signup:hover {
+  background: #ff9900;
+}
+
+button, .nav-links a {
+  transition: all 0.3s ease-in-out;
+}

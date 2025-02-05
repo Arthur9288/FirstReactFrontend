@@ -3,14 +3,14 @@
     padding: 50px;
     min-height: 100vh;
     transition: background-color 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  /* Centers content vertically */
+    position: relative;
 }
 
-.cafe-homepage h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.cafe-homepage p {
+    .cafe-homepage p {
     font-size: 1.5rem;
     color: #555;
 }
@@ -31,13 +31,41 @@
 }
 
 .cafe-button {
-    padding: 10px 20px;
-    font-size: 1rem;
+    padding: 8px 15px;
+    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin: 10px;
+    background: #ffcc00;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
 }
 
 .cafe-button:hover {
-    background-color: #ddd;
+    background: #ff9900;
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #ffcc00;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.scroll-to-top:hover {
+    background-color: #ff9900;
 }
